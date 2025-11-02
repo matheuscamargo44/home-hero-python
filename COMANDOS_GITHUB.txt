@@ -1,0 +1,17 @@
+# Comandos para subir o projeto no GitHub
+
+# 1. Primeiro, crie o repositório no GitHub através do site:
+#    https://github.com/new
+#    Nome sugerido: home-hero-python
+
+# 2. Depois execute estes comandos (substitua SEU_USUARIO pelo seu usuário GitHub):
+
+git remote add origin https://github.com/SEU_USUARIO/home-hero-python.git
+git branch -M main
+git push -u origin main
+
+# OU se usar SSH:
+# git remote add origin git@github.com:SEU_USUARIO/home-hero-python.git
+# git branch -M main  
+# git push -u origin main
+
