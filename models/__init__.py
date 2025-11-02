@@ -12,6 +12,7 @@ from .pagamento import Pagamento
 from .notificacao import Notificacao
 from .historico_status_agendamento import HistoricoStatusAgendamento
 from .prestador_servico import PrestadorServico
+from .empresa_servico import EmpresaServico
 from .regiao import Regiao
 from .registro_regiao import RegistroRegiao
 from .atribuicao_servico import AtribuicaoServico
@@ -37,6 +38,7 @@ __all__ = [
     "Notificacao",
     "HistoricoStatusAgendamento",
     "PrestadorServico",
+    "EmpresaServico",
     "Regiao",
     "RegistroRegiao",
     "AtribuicaoServico",

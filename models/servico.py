@@ -15,5 +15,6 @@ class Servico(Base):
     # Relationships
     categoria = relationship("CategoriaServico", back_populates="servicos")
     prestadores_servicos = relationship("PrestadorServico", back_populates="servico", cascade="all, delete-orphan")
+    empresas_servicos = relationship("EmpresaServico", back_populates="servico", cascade="all, delete-orphan")
     agendamentos = relationship("AgendamentoServico", back_populates="servico", cascade="all, delete-orphan")
 

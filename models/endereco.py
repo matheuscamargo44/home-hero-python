@@ -6,11 +6,11 @@ class Endereco(Base):
     __tablename__ = "endereco"
     
     id = Column("end_id", Integer, primary_key=True, index=True)
-    logradouro = Column("end_logradouro", String(255))
-    numero = Column("end_numero", String(20))
-    complemento = Column("end_complemento", String(100))
-    bairro = Column("end_bairro", String(100))
-    cidade = Column("end_cidade", String(100))
+    logradouro = Column("end_logradouro", String(100))
+    numero = Column("end_numero", String(15))
+    complemento = Column("end_complemento", String(60))
+    bairro = Column("end_bairro", String(60))
+    cidade = Column("end_cidade", String(60))
     uf = Column("end_uf", String(2))
     cep = Column("end_cep", String(10))
     

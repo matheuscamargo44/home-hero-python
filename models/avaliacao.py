@@ -11,7 +11,8 @@ class Avaliacao(Base):
     id = Column("ava_id", Integer, primary_key=True, index=True)
     agendamento_id = Column("ava_age_id", Integer, ForeignKey("agendamento_servico.age_id"), nullable=False)
     cliente_id = Column("ava_cli_id", Integer, ForeignKey("cliente.cli_id"), nullable=False)
-    prestador_id = Column("ava_pre_id", Integer, ForeignKey("prestador.pre_id"), nullable=False)
+    prestador_id = Column("ava_pre_id", Integer, ForeignKey("prestador.pre_id"))
+    empresa_id = Column("ava_emp_id", Integer, ForeignKey("empresa.emp_id"))
     nota = Column("ava_nota", Integer)
     comentario = Column("ava_comentario", String(400))
     data = Column("ava_data", Date)
@@ -20,6 +21,7 @@ class Avaliacao(Base):
     agendamento = relationship("AgendamentoServico", back_populates="avaliacoes")
     cliente = relationship("Cliente", back_populates="avaliacoes")
     prestador = relationship("Prestador", back_populates="avaliacoes")
+    empresa = relationship("Empresa", back_populates="avaliacoes")
 
 # Event listener equivalente ao @PostPersist do Java
 @event.listens_for(Avaliacao, 'after_insert')
@@ -31,6 +33,7 @@ def after_insert_avaliacao(mapper, connection, target):
         notificacao_table.insert().values(
             cliente_id=target.cliente_id,
             prestador_id=target.prestador_id,
+            empresa_id=target.empresa_id,
             agendamento_id=target.agendamento_id,
             tipo="Avaliacao",
             mensagem="Nova avaliação registrada.",

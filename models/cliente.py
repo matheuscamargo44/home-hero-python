@@ -6,7 +6,7 @@ class Cliente(Base):
     __tablename__ = "cliente"
     
     id = Column("cli_id", Integer, primary_key=True, index=True)
-    nome_completo = Column("cli_nome_completo", String(255), nullable=False)
+    nome_completo = Column("cli_nome_completo", String(80), nullable=False)
     cpf = Column("cli_cpf", String(14), unique=True)
     data_nascimento = Column("cli_data_nascimento", Date)
     forma_pagamento_preferida = Column("cli_forma_pagamento_preferida", String(20))

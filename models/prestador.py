@@ -6,7 +6,7 @@ class Prestador(Base):
     __tablename__ = "prestador"
     
     id = Column("pre_id", Integer, primary_key=True, index=True)
-    nome_completo = Column("pre_nome_completo", String(255), nullable=False)
+    nome_completo = Column("pre_nome_completo", String(80), nullable=False)
     cpf = Column("pre_cpf", String(14), unique=True)
     data_nascimento = Column("pre_data_nascimento", Date)
     areas_atuacao = Column("pre_areas_atuacao", String(120))
